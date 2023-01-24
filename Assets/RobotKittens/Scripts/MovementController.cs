@@ -8,42 +8,28 @@ using UnityEngine.Windows;
 public class MovementController : MonoBehaviour
 {
     [SerializeField]
-    private float speed;
-
-    [SerializeField]
-    private Button forwardsBtn, backwardsBtn, leftBtn, rightBtn;
+    private float movementSpeed;
 
     private Rigidbody rigidbody;
+    private JoystickManager joystickManager;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-
-        backwardsBtn.GetOrAddComponent<ButtonEvents>().onHold.AddListener(MoveBackwards);
-        forwardsBtn.GetOrAddComponent<ButtonEvents>().onHold.AddListener(MoveForward);
-        leftBtn.GetOrAddComponent<ButtonEvents>().onHold.AddListener(MoveLeft);
-        rightBtn.GetOrAddComponent<ButtonEvents>().onHold.AddListener(MoveRight);
+        joystickManager = GameObject.Find("ImgBGJoystick").GetComponent<JoystickManager>();
     }
 
-    void MoveBackwards()
+    private void Update()
     {
-        Vector3 newTransform = new Vector3(0f, 0f, speed);
-        rigidbody.MovePosition(transform.position + newTransform * Time.deltaTime);
-    }
-    void MoveForward()
-    {
-        Vector3 newTransform = new Vector3(0f, 0f, -speed);
-        rigidbody.MovePosition(transform.position + newTransform * Time.deltaTime);
-    }
-    void MoveLeft()
-    {
-        Vector3 newTransform = new Vector3(-speed, 0f, 0f);
-        rigidbody.MovePosition(transform.position + newTransform * Time.deltaTime);
-    }
-    void MoveRight()
-    {
-        Vector3 newTransform = new Vector3(speed, 0f, 0f);
-        rigidbody.MovePosition(transform.position + newTransform * Time.deltaTime);
+        float inputX = joystickManager.InputHorizontal();
+        float inputY = joystickManager.InputVertical();
+
+        //Store user input as a movement vector
+        Vector3 inputMovement = new Vector3(inputX, 0, inputY);
+
+        //Apply the movement vector to the current position, which is
+        //multiplied by deltaTime and speed for a smooth MovePosition
+        rigidbody.MovePosition(transform.position + inputMovement * Time.deltaTime * movementSpeed);
     }
 }
