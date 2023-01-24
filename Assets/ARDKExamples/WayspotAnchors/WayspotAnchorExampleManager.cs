@@ -47,6 +47,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
           new HashSet<WayspotAnchorTracker>();
 
         private IWayspotAnchorsConfiguration _config;
+        private bool mapLoaded = false;
 
         private void Awake()
         {
@@ -92,40 +93,15 @@ namespace Niantic.ARDKExamples.WayspotAnchors
             if (WayspotAnchorService == null)
                 return;
 
-            // Do hit test from where player taps on screen
-            var touchSuccess = TryGetTouchInput(out Matrix4x4 localPose);
-
-            if (touchSuccess)
-            {
-                if (WayspotAnchorService.LocalizationState == LocalizationState.Localized)
+                if (WayspotAnchorService.LocalizationState == LocalizationState.Localized && mapLoaded == false)
                 {
+                    LoadWayspotAnchors();
+                    mapLoaded = true;
+                    Debug.Log("loadAnchors");
                     //PlaceAnchor(localPose); //Create the Wayspot Anchor and place the GameObject
                 }
                 else
                     _statusLog.text = "Must localize before placing anchor.";
-            }
-        }
-
-        /// Saves all of the existing wayspot anchors
-        public void SaveWayspotAnchors()
-        {
-            if (_wayspotAnchorTrackers.Count > 0)
-            {
-                var wayspotAnchors = WayspotAnchorService.GetAllWayspotAnchors();
-
-                // Only anchors that have successfully resolved can be saved
-                var saveableAnchors = wayspotAnchors.Where(a => a.Status == WayspotAnchorStatusCode.Limited || a.Status == WayspotAnchorStatusCode.Success);
-                var payloads = saveableAnchors.Select(a => a.Payload);
-
-                Debug.Log("WayspotAnchorDataUtility : " + (WayspotAnchorDataUtility.Instance != null));
-                WayspotAnchorDataUtility.Instance.SavePayloads(payloads.ToArray());
-            }
-            else
-            {
-                WayspotAnchorDataUtility.Instance.SavePayloads(Array.Empty<WayspotAnchorPayload>());
-            }
-
-            _statusLog.text = $"Saved {_wayspotAnchorTrackers.Count} Wayspot Anchors.";
         }
 
         /// Loads all of the saved wayspot anchors
@@ -159,7 +135,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
                 }
             }
         }
-
+        /*
         /// Clears all of the active wayspot anchors
         public void ClearAnchorGameObjects()
         {
@@ -209,6 +185,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
         {
             WayspotAnchorService.Restart();
         }
+        */
 
         private void HandleSessionInitialized(AnyARSessionInitializedArgs args)
         {
@@ -293,6 +270,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
 
             return go;
         }
+        /*
 
         private bool TryGetTouchInput(out Matrix4x4 localPose)
         {
@@ -362,6 +340,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
         {
             _config = config;
         }
+        */
 
         [Serializable]
         public class MapData
