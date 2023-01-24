@@ -57,7 +57,7 @@ public class JoystickManager : MonoBehaviour, IDragHandler, IPointerDownHandler,
         if (posInput.x != 0)
             return posInput.x;
         else
-            return Input.GetAxis("horizontal");
+            return Input.GetAxis("Horizontal");
     }    
     
     public float InputVertical()
@@ -65,6 +65,6 @@ public class JoystickManager : MonoBehaviour, IDragHandler, IPointerDownHandler,
         if (posInput.y != 0)
             return posInput.y;
         else
-            return Input.GetAxis("vertical");
+            return Input.GetAxis("Vertical");
     }
 }

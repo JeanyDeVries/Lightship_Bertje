@@ -93,15 +93,17 @@ namespace Niantic.ARDKExamples.WayspotAnchors
             if (WayspotAnchorService == null)
                 return;
 
-                if (WayspotAnchorService.LocalizationState == LocalizationState.Localized && mapLoaded == false)
-                {
-                    //LoadWayspotAnchors();
-                    mapLoaded = true;
-                    Debug.Log("loadAnchors");
-                    //PlaceAnchor(localPose); //Create the Wayspot Anchor and place the GameObject
-                }
-                else
-                    _statusLog.text = "Must localize before placing anchor.";
+            if (mapLoaded) return;
+
+            if (WayspotAnchorService.LocalizationState == LocalizationState.Localized)
+            {
+                mapLoaded = true;
+                LoadWayspotAnchors();
+                Debug.Log("loadAnchors");
+                //PlaceAnchor(localPose); //Create the Wayspot Anchor and place the GameObject
+            }
+            else
+                _statusLog.text = "Must localize before placing anchor.";
         }
 
         /// Loads all of the saved wayspot anchors
