@@ -1,0 +1,519 @@
+fileFormatVersion: 2
+guid: beec56beffb041b4ab0c1be1cfacda42
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable:
+  - first:
+      74: 3982286435205538884
+    second: Camera|Circle001|Take 001|BaseLayer
+  - first:
+      74: -768614288126728426
+    second: Camera|Circle002|Take 001|BaseLayer
+  - first:
+      74: -5423282665885604242
+    second: Camera|Circle003|Take 001|BaseLayer
+  - first:
+      74: -1342726635135949279
+    second: Camera|Circle004|Take 001|BaseLayer
+  - first:
+      74: 3173409504183057133
+    second: Camera|Circle006|Take 001|BaseLayer
+  - first:
+      74: 2092898913378318179
+    second: Camera|Circle007|Take 001|BaseLayer
+  - first:
+      74: 3728662519793598394
+    second: Camera|Circle008|Take 001|BaseLayer
+  - first:
+      74: -2240512415727334234
+    second: Camera|Circle009|Take 001|BaseLayer
+  - first:
+      74: 6419378232156449361
+    second: Camera|IK Chain001|Take 001|BaseLayer
+  - first:
+      74: 5710392625304468086
+    second: Camera|IK Chain002|Take 001|BaseLayer
+  - first:
+      74: 8284310702188981421
+    second: Camera|IK Chain003|Take 001|BaseLayer
+  - first:
+      74: -4985300909528625206
+    second: Camera|IK Chain004|Take 001|BaseLayer
+  - first:
+      74: 5046231713169299104
+    second: Camera|IK Chain005|Take 001|BaseLayer
+  - first:
+      74: 6332175549435594121
+    second: Camera|IK Chain006|Take 001|BaseLayer
+  - first:
+      74: 1713760354356193566
+    second: Camera|IK Chain007|Take 001|BaseLayer
+  - first:
+      74: -2311200667484525513
+    second: Camera|IK Chain008|Take 001|BaseLayer
+  - first:
+      74: 6281629476145027153
+    second: Camera|kitten_hip_CTRL|Take 001|BaseLayer
+  - first:
+      74: 395229019925017867
+    second: Camera|kitten_left_back_collarHip_CTRL|Take 001|BaseLayer
+  - first:
+      74: 5294251280832237656
+    second: Camera|kitten_left_back_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: -4832677648179431712
+    second: Camera|kitten_left_front_collar_CTRL|Take 001|BaseLayer
+  - first:
+      74: 4733455323507804490
+    second: Camera|kitten_left_front_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: -2159885576044954214
+    second: Camera|kitten_main_body_CTRL|Take 001|BaseLayer
+  - first:
+      74: -879034416484094263
+    second: Camera|kitten_rib_CTRL|Take 001|BaseLayer
+  - first:
+      74: 1657793386435894590
+    second: Camera|kitten_right_back_collarHip_CTRL|Take 001|BaseLayer
+  - first:
+      74: 8988099382796664139
+    second: Camera|kitten_right_back_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: 7800568351116218017
+    second: Camera|kitten_right_front_collar_CTRL|Take 001|BaseLayer
+  - first:
+      74: 2025392023399199750
+    second: Camera|kitten_right_front_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: 5978114255584445378
+    second: Camera|NGon002|Take 001|BaseLayer
+  - first:
+      74: -7673139167312960873
+    second: Camera|Rectangle001|Take 001|BaseLayer
+  - first:
+      74: 9180523951603107724
+    second: Camera|Rectangle002|Take 001|BaseLayer
+  - first:
+      74: -462977392569877658
+    second: Camera|Rectangle004|Take 001|BaseLayer
+  - first:
+      74: -589066726473188192
+    second: Camera|Rectangle005|Take 001|BaseLayer
+  - first:
+      74: -7616139999914021974
+    second: Camera|Rectangle007|Take 001|BaseLayer
+  - first:
+      74: -1700242397590286172
+    second: Camera|rigAction
+  - first:
+      74: 5862543501114407046
+    second: Armature|Armature|Take 001|BaseLayer
+  - first:
+      74: 152000855622332937
+    second: Armature|Circle001|Take 001|BaseLayer
+  - first:
+      74: 5157018641140836941
+    second: Armature|Circle002|Take 001|BaseLayer
+  - first:
+      74: 5282851948896303170
+    second: Armature|Circle003|Take 001|BaseLayer
+  - first:
+      74: -7710242206741163260
+    second: Armature|Circle004|Take 001|BaseLayer
+  - first:
+      74: 2067444966221071509
+    second: Armature|Circle006|Take 001|BaseLayer
+  - first:
+      74: 8229240976174681210
+    second: Armature|Circle007|Take 001|BaseLayer
+  - first:
+      74: 5463742951234820466
+    second: Armature|Circle008|Take 001|BaseLayer
+  - first:
+      74: 6060965528261334758
+    second: Armature|Circle009|Take 001|BaseLayer
+  - first:
+      74: 7853300921627820148
+    second: Armature|IK Chain001|Take 001|BaseLayer
+  - first:
+      74: -4917375677931556214
+    second: Armature|IK Chain002|Take 001|BaseLayer
+  - first:
+      74: 6851506084504902975
+    second: Armature|IK Chain003|Take 001|BaseLayer
+  - first:
+      74: 3067872744661413415
+    second: Armature|IK Chain004|Take 001|BaseLayer
+  - first:
+      74: -3691612996721391759
+    second: Armature|IK Chain005|Take 001|BaseLayer
+  - first:
+      74: -7518094650225163533
+    second: Armature|IK Chain006|Take 001|BaseLayer
+  - first:
+      74: -835160036800301243
+    second: Armature|IK Chain007|Take 001|BaseLayer
+  - first:
+      74: -196405692798371666
+    second: Armature|IK Chain008|Take 001|BaseLayer
+  - first:
+      74: -3904909031213488214
+    second: Armature|kitten_hip_CTRL|Take 001|BaseLayer
+  - first:
+      74: 8274763196045767507
+    second: Armature|kitten_left_back_collarHip_CTRL|Take 001|BaseLayer
+  - first:
+      74: -6213857095344032072
+    second: Armature|kitten_left_back_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: -1674467966765451708
+    second: Armature|kitten_left_front_collar_CTRL|Take 001|BaseLayer
+  - first:
+      74: -8233626570529035213
+    second: Armature|kitten_left_front_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: 5820491588052268654
+    second: Armature|kitten_main_body_CTRL|Take 001|BaseLayer
+  - first:
+      74: -4517687523108112830
+    second: Armature|kitten_rib_CTRL|Take 001|BaseLayer
+  - first:
+      74: -3640453664311367916
+    second: Armature|kitten_right_back_collarHip_CTRL|Take 001|BaseLayer
+  - first:
+      74: 1338384717369868674
+    second: Armature|kitten_right_back_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: 2146708514983810106
+    second: Armature|kitten_right_front_collar_CTRL|Take 001|BaseLayer
+  - first:
+      74: -3086474884365322974
+    second: Armature|kitten_right_front_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: -8577773097554112589
+    second: Armature|NGon002|Take 001|BaseLayer
+  - first:
+      74: -1541079831070481427
+    second: Armature|Rectangle001|Take 001|BaseLayer
+  - first:
+      74: -2018188305127619996
+    second: Armature|Rectangle002|Take 001|BaseLayer
+  - first:
+      74: -5318830148361537893
+    second: Armature|Rectangle004|Take 001|BaseLayer
+  - first:
+      74: 6018936169364034655
+    second: Armature|Rectangle005|Take 001|BaseLayer
+  - first:
+      74: 4502950471298029473
+    second: Armature|Rectangle007|Take 001|BaseLayer
+  - first:
+      74: 3044367013172484524
+    second: Armature|rigAction
+  - first:
+      74: -4145384881166331501
+    second: Limbo|Circle001|Take 001|BaseLayer
+  - first:
+      74: -6822277338052103947
+    second: Limbo|Circle002|Take 001|BaseLayer
+  - first:
+      74: 8836207365239377103
+    second: Limbo|Circle003|Take 001|BaseLayer
+  - first:
+      74: -3316451255842227879
+    second: Limbo|Circle004|Take 001|BaseLayer
+  - first:
+      74: -8584794189173125333
+    second: Limbo|Circle006|Take 001|BaseLayer
+  - first:
+      74: -5251208333507871419
+    second: Limbo|Circle007|Take 001|BaseLayer
+  - first:
+      74: -8377823503521335487
+    second: Limbo|Circle008|Take 001|BaseLayer
+  - first:
+      74: -3296291047159089820
+    second: Limbo|Circle009|Take 001|BaseLayer
+  - first:
+      74: 2547801197145030451
+    second: Limbo|IK Chain001|Take 001|BaseLayer
+  - first:
+      74: -6544378960788237997
+    second: Limbo|IK Chain002|Take 001|BaseLayer
+  - first:
+      74: 650947955516481707
+    second: Limbo|IK Chain003|Take 001|BaseLayer
+  - first:
+      74: 8927073244995037925
+    second: Limbo|IK Chain004|Take 001|BaseLayer
+  - first:
+      74: 111490589073088659
+    second: Limbo|IK Chain005|Take 001|BaseLayer
+  - first:
+      74: 5262098398921008153
+    second: Limbo|IK Chain006|Take 001|BaseLayer
+  - first:
+      74: -6082412139056835046
+    second: Limbo|IK Chain007|Take 001|BaseLayer
+  - first:
+      74: -6311697742023074539
+    second: Limbo|IK Chain008|Take 001|BaseLayer
+  - first:
+      74: 5287977138457401299
+    second: Limbo|kitten_hip_CTRL|Take 001|BaseLayer
+  - first:
+      74: 5699480540557493930
+    second: Limbo|kitten_left_back_collarHip_CTRL|Take 001|BaseLayer
+  - first:
+      74: -3925829106726174588
+    second: Limbo|kitten_left_back_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: -1026997925519281820
+    second: Limbo|kitten_left_front_collar_CTRL|Take 001|BaseLayer
+  - first:
+      74: -1889375498151403325
+    second: Limbo|kitten_left_front_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: 8045071571635386347
+    second: Limbo|kitten_main_body_CTRL|Take 001|BaseLayer
+  - first:
+      74: 5343162640104615504
+    second: Limbo|kitten_rib_CTRL|Take 001|BaseLayer
+  - first:
+      74: 378663312999514333
+    second: Limbo|kitten_right_back_collarHip_CTRL|Take 001|BaseLayer
+  - first:
+      74: -8304221606323610169
+    second: Limbo|kitten_right_back_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: 7851522600091448544
+    second: Limbo|kitten_right_front_collar_CTRL|Take 001|BaseLayer
+  - first:
+      74: -5032534049983858476
+    second: Limbo|kitten_right_front_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: -8377122596086850240
+    second: Limbo|NGon002|Take 001|BaseLayer
+  - first:
+      74: 5752217719802898558
+    second: Limbo|Rectangle001|Take 001|BaseLayer
+  - first:
+      74: 1889562492911403536
+    second: Limbo|Rectangle002|Take 001|BaseLayer
+  - first:
+      74: -3586572374796639793
+    second: Limbo|Rectangle004|Take 001|BaseLayer
+  - first:
+      74: -9197549978990254539
+    second: Limbo|Rectangle005|Take 001|BaseLayer
+  - first:
+      74: 1664693758868881457
+    second: Limbo|Rectangle007|Take 001|BaseLayer
+  - first:
+      74: -2415040772063803856
+    second: Limbo|rigAction
+  - first:
+      74: -6602200636922974912
+    second: RobotKitten_rig|Circle001|Take 001|BaseLayer
+  - first:
+      74: 1546343846826404920
+    second: RobotKitten_rig|Circle002|Take 001|BaseLayer
+  - first:
+      74: 4779468597489912221
+    second: RobotKitten_rig|Circle003|Take 001|BaseLayer
+  - first:
+      74: -4945380471950300847
+    second: RobotKitten_rig|Circle004|Take 001|BaseLayer
+  - first:
+      74: 4324969903139483060
+    second: RobotKitten_rig|Circle006|Take 001|BaseLayer
+  - first:
+      74: -4540674750580211934
+    second: RobotKitten_rig|Circle007|Take 001|BaseLayer
+  - first:
+      74: 4870950317947185970
+    second: RobotKitten_rig|Circle008|Take 001|BaseLayer
+  - first:
+      74: 4322066442932438180
+    second: RobotKitten_rig|Circle009|Take 001|BaseLayer
+  - first:
+      74: -6890585922483288146
+    second: RobotKitten_rig|IK Chain001|Take 001|BaseLayer
+  - first:
+      74: 4190327346031971690
+    second: RobotKitten_rig|IK Chain002|Take 001|BaseLayer
+  - first:
+      74: -6896083569777866476
+    second: RobotKitten_rig|IK Chain003|Take 001|BaseLayer
+  - first:
+      74: -2942993591735995249
+    second: RobotKitten_rig|IK Chain004|Take 001|BaseLayer
+  - first:
+      74: -2595278382151395023
+    second: RobotKitten_rig|IK Chain005|Take 001|BaseLayer
+  - first:
+      74: -4270901185257333776
+    second: RobotKitten_rig|IK Chain006|Take 001|BaseLayer
+  - first:
+      74: -3329014865097389309
+    second: RobotKitten_rig|IK Chain007|Take 001|BaseLayer
+  - first:
+      74: 8661497124242642762
+    second: RobotKitten_rig|IK Chain008|Take 001|BaseLayer
+  - first:
+      74: -6892069769026079378
+    second: RobotKitten_rig|kitten_hip_CTRL|Take 001|BaseLayer
+  - first:
+      74: -2117385137896151908
+    second: RobotKitten_rig|kitten_left_back_collarHip_CTRL|Take 001|BaseLayer
+  - first:
+      74: -3461828987111651758
+    second: RobotKitten_rig|kitten_left_back_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: -8932153496029561712
+    second: RobotKitten_rig|kitten_left_front_collar_CTRL|Take 001|BaseLayer
+  - first:
+      74: -2819307527245583367
+    second: RobotKitten_rig|kitten_left_front_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: -348218422130943776
+    second: RobotKitten_rig|kitten_main_body_CTRL|Take 001|BaseLayer
+  - first:
+      74: -4782696328354445154
+    second: RobotKitten_rig|kitten_rib_CTRL|Take 001|BaseLayer
+  - first:
+      74: -3715624042753357709
+    second: RobotKitten_rig|kitten_right_back_collarHip_CTRL|Take 001|BaseLayer
+  - first:
+      74: 3748831641675148696
+    second: RobotKitten_rig|kitten_right_back_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: 460000970357640841
+    second: RobotKitten_rig|kitten_right_front_collar_CTRL|Take 001|BaseLayer
+  - first:
+      74: -4215690799199198539
+    second: RobotKitten_rig|kitten_right_front_pad_upVector|Take 001|BaseLayer
+  - first:
+      74: 967341636204909654
+    second: RobotKitten_rig|NGon002|Take 001|BaseLayer
+  - first:
+      74: -1631320274551248854
+    second: RobotKitten_rig|Rectangle001|Take 001|BaseLayer
+  - first:
+      74: -675645829508262384
+    second: RobotKitten_rig|Rectangle002|Take 001|BaseLayer
+  - first:
+      74: -8055313855503718280
+    second: RobotKitten_rig|Rectangle004|Take 001|BaseLayer
+  - first:
+      74: 858807211627739120
+    second: RobotKitten_rig|Rectangle005|Take 001|BaseLayer
+  - first:
+      74: -4603748310825170765
+    second: RobotKitten_rig|Rectangle007|Take 001|BaseLayer
+  - first:
+      74: 7152465880003420652
+    second: RobotKitten_rig|rigAction
+  - first:
+      74: -3050926017781007663
+    second: RobotKitten_rig|rigAction.001
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
