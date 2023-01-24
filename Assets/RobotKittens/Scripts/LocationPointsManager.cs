@@ -5,7 +5,8 @@ using UnityEngine;
 using TMPro;
 
 
-public class locationPointsManager : MonoBehaviour
+
+public class LocationPointsManager : MonoBehaviour
 {
     [SerializeField]
     List<LocationPoint> children;
@@ -24,8 +25,7 @@ public class locationPointsManager : MonoBehaviour
     private GameObject arrowObj;
     private float arrowRotationSpeed = 15;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         arrowObj = Instantiate(prefabArrow);
         arrowObj.transform.parent = this.transform;

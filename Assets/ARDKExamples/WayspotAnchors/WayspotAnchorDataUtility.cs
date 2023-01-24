@@ -19,6 +19,9 @@ namespace Niantic.ARDKExamples.WayspotAnchors
         [SerializeField]
         private GameObject UI_ARStatus;
 
+        [SerializeField]
+        private GameObject locationManager;
+
         public Material meshTransparent;
 
         private const string DataKey = "wayspot_anchor_payloads";
@@ -84,8 +87,9 @@ namespace Niantic.ARDKExamples.WayspotAnchors
             meshFilter.mesh = location.meshLocation;
             meshFilter.sharedMesh = location.meshLocation;
             meshRenderer.material = meshTransparent;
-            roomObject.AddComponent<MeshCollider>();
-            Debug.Log("Mesh set : " + location.meshLocation.name);
+            MeshCollider meshCollider = roomObject.AddComponent<MeshCollider>();
+            //meshCollider.convex = true;
+            Debug.Log("Mesh" + meshFilter.sharedMesh.isReadable.ToString());
 
 
             var payloadsArray = payloads.ToArray();
@@ -105,11 +109,13 @@ namespace Niantic.ARDKExamples.WayspotAnchors
             foreach (GameObject placedObjectData in location.placedObjects)
             {
                 GameObject placedObject = Instantiate(placedObjectData);
+                placedObject.SetActive(true);
                 placedObject.transform.SetParent(roomObject.transform);
             }
 
             UI_Game.SetActive(true);
             UI_ARStatus.SetActive(false);
+            locationManager.SetActive(true);
 
             if (anchorsList.Count > 0)
             {
