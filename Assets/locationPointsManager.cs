@@ -8,20 +8,28 @@ using TMPro;
 public class locationPointsManager : MonoBehaviour
 {
     [SerializeField]
-    private List<LocationPoint> children;
+    List<LocationPoint> children;
 
     [SerializeField]
-    TMP_Text textTargetLocation; 
+    TMP_Text textTargetLocation;
 
     [SerializeField]
-    private float radius;
+    GameObject prefabArrow;
+
+    [SerializeField]
+    float radius;
 
     private GameObject targetLocationObject;
     private GameObject lastTargetLocationObject = null;
+    private GameObject arrowObj;
+    private float arrowRotationSpeed = 15;
 
     // Start is called before the first frame update
     void Start()
     {
+        arrowObj = Instantiate(prefabArrow);
+        arrowObj.transform.parent = this.transform;
+
         AssignTargetLocation();
     }
 
@@ -41,6 +49,8 @@ public class locationPointsManager : MonoBehaviour
                 }
             }
         }
+
+        arrowObj.transform.Rotate(Time.deltaTime * arrowRotationSpeed, 0.0f, 0.0f, Space.Self);
     }
 
     private void OnDrawGizmos()
@@ -66,6 +76,8 @@ public class locationPointsManager : MonoBehaviour
             AssignTargetLocation(); //maybe rewrite this later, can be a bit heavy when unlucky
             return;
         }
+
+        arrowObj.transform.position = new Vector3(targetLocationObject.transform.position.x, targetLocationObject.transform.position.y + 1, targetLocationObject.transform.position.z);
 
         textTargetLocation.text = "Go to " + targetLocation.nameLocation;
     }

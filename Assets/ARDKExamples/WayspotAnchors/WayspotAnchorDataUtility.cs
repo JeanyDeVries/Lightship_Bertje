@@ -17,7 +17,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
         private GameObject UI_Game;
 
         [SerializeField]
-        private GameObject bertjePrefab;
+        private GameObject UI_ARStatus;
 
         public Material meshTransparent;
 
@@ -84,6 +84,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
             meshFilter.mesh = location.meshLocation;
             meshFilter.sharedMesh = location.meshLocation;
             meshRenderer.material = meshTransparent;
+            roomObject.AddComponent<MeshCollider>();
             Debug.Log("Mesh set : " + location.meshLocation.name);
 
 
@@ -108,6 +109,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
             }
 
             UI_Game.SetActive(true);
+            UI_ARStatus.SetActive(false);
 
             if (anchorsList.Count > 0)
             {

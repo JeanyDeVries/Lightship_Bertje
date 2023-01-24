@@ -129,6 +129,8 @@ namespace Niantic.ARDKExamples.WayspotAnchors
     /// Loads all of the saved wayspot anchors
     public void LoadWayspotAnchors()
     {
+        if (WayspotAnchorService.LocalizationState != LocalizationState.Localized) return;
+
         for (int i = 1; i <= locations.Count; i++)
         {
                 Debug.Log("load waypoints");
