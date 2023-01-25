@@ -22,7 +22,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
     {
         [Tooltip("Skip the first one in the list (0), because UI is fucked in Unity")]
         [SerializeField]
-        public List<MapData> locations;
+        public MapData streetLocation;
 
         [Tooltip("The anchor that will be placed")]
         [SerializeField]
@@ -95,6 +95,13 @@ namespace Niantic.ARDKExamples.WayspotAnchors
 
             if (mapLoaded) return;
 
+            if (WayspotAnchorService.LocalizationState == LocalizationState.Failed)
+            {
+                _statusLog.text = "Trying to localize again";
+                WayspotAnchorService.Restart();
+            }
+
+
             if (WayspotAnchorService.LocalizationState == LocalizationState.Localized)
             {
                 mapLoaded = true;
@@ -113,28 +120,25 @@ namespace Niantic.ARDKExamples.WayspotAnchors
 
             _statusLog.text = "load anchors";
 
-            for (int i = 1; i <= locations.Count; i++)
+            Debug.Log("load waypoints");
+            var payloads = WayspotAnchorDataUtility.Instance.LoadPayloads(streetLocation);
+            Debug.Log("payloads : " + payloads.Length.ToString());
+            if (payloads.Length > 0)
             {
-                Debug.Log("load waypoints");
-                var payloads = WayspotAnchorDataUtility.Instance.LoadPayloads(locations[i]);
-                Debug.Log("payloads : " + payloads.Length.ToString());
-                if (payloads.Length > 0)
+                foreach (var payload in payloads)
                 {
-                    foreach (var payload in payloads)
-                    {
-                        var anchors = WayspotAnchorService.RestoreWayspotAnchors(payload);
-                        if (anchors.Length == 0)
-                            return; // error raised in CreateWayspotAnchors
+                    var anchors = WayspotAnchorService.RestoreWayspotAnchors(payload);
+                    if (anchors.Length == 0)
+                        return; // error raised in CreateWayspotAnchors
 
-                        CreateWayspotAnchorGameObject(anchors[0], Vector3.zero, Quaternion.identity, false);
-                    }
+                    CreateWayspotAnchorGameObject(anchors[0], Vector3.zero, Quaternion.identity, false);
+                }
 
-                    _statusLog.text = $"Loaded {_wayspotAnchorTrackers.Count} anchors.";
-                }
-                else
-                {
-                    _statusLog.text = "No anchors to load.";
-                }
+                _statusLog.text = $"Loaded {_wayspotAnchorTrackers.Count} anchors.";
+            }
+            else
+            {
+                _statusLog.text = "No anchors to load.";
             }
         }
         /*
@@ -350,6 +354,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
             public string nameLocation;
             public string keyLocation;
             public Mesh meshLocation;
+            public List<Mesh> surroundingMeshes;
             public List<GameObject> placedObjects;
         }
 

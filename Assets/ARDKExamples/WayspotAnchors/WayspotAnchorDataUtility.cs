@@ -105,6 +105,19 @@ namespace Niantic.ARDKExamples.WayspotAnchors
                 }
             }
 
+            foreach (var meshLocation in location.surroundingMeshes)
+            {
+                GameObject mesh = new GameObject();
+
+                MeshRenderer meshRenderer1 = mesh.AddComponent(typeof(MeshRenderer)) as MeshRenderer;
+                MeshFilter meshFilter1 = mesh.AddComponent(typeof(MeshFilter)) as MeshFilter;
+                meshFilter1.mesh = meshLocation;
+                meshFilter1.sharedMesh = meshLocation;
+                meshRenderer1.material = meshTransparent;
+                mesh.AddComponent<MeshCollider>();
+                mesh.transform.SetParent(roomObject.transform);
+            }
+
             //WayspotAnchorTracker placedTracker = null;
             foreach (GameObject placedObjectData in location.placedObjects)
             {

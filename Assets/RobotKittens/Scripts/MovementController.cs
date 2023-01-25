@@ -20,7 +20,7 @@ public class MovementController : MonoBehaviour
         joystickManager = GameObject.Find("ImgBGJoystick").GetComponent<JoystickManager>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float inputX = joystickManager.InputHorizontal();
         float inputY = joystickManager.InputVertical();
