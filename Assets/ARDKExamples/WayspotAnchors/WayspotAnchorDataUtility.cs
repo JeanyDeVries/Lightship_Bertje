@@ -77,7 +77,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
 
             var payloads = new List<WayspotAnchorPayload>();
             var trackers = new List<WayspotAnchorTracker>();
-            for (int i = 1; i <= locations.Count; i++)
+            for (int i = 1; i < locations.Count; i++)
             {
                 var location = locations[i];
                 payloads.Add(WayspotAnchorPayload.Deserialize(location.keyLocation));
@@ -85,6 +85,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
                 Debug.Log("location : " + location.nameLocation);
 
                 GameObject roomObject = new GameObject();
+                roomObject.name = location.nameLocation;
                 WayspotAnchorTracker tracker = roomObject.AddComponent(typeof(WayspotAnchorTracker)) as WayspotAnchorTracker;
                 trackers.Add(tracker);
 

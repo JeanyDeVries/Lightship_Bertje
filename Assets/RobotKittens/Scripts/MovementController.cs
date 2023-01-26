@@ -30,11 +30,26 @@ public class MovementController : MonoBehaviour
         float inputX = joystickManager.InputHorizontal();
         float inputY = joystickManager.InputVertical();
 
+
+        Vector3 forwardCamera = Camera.main.transform.forward;
+        Vector3 rightCamera = Camera.main.transform.right;
+        forwardCamera.y = 0;
+        rightCamera.y = 0;
+        forwardCamera = forwardCamera.normalized;
+        rightCamera = rightCamera.normalized;
+
+
+        Vector3 verticalMovement = inputY * forwardCamera * movementSpeed;
+        Vector3 horizontalMovement = inputX * rightCamera * movementSpeed;
+
+        Vector3 cameraRelativeMovement = verticalMovement + horizontalMovement;
+        this.transform.Translate(cameraRelativeMovement, Space.World);
+
         //Store user input as a movement vector
-        Vector3 inputMovement = new Vector3(inputX, 0, inputY);
+        //Vector3 inputMovement = new Vector3(inputX, 0, inputY);
 
         //Apply the movement vector to the current position, which is
         //multiplied by deltaTime and speed for a smooth MovePosition
-        rigidbody.MovePosition(transform.position + inputMovement * Time.deltaTime * movementSpeed);
+        //rigidbody.MovePosition(transform.position + inputMovement * Time.deltaTime * movementSpeed);
     }
 }

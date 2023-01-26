@@ -122,6 +122,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
 
             Debug.Log("load waypoints");
             var payloads = WayspotAnchorDataUtility.Instance.LoadPayloads(streetLocation);
+            Debug.Log("payloads");
             Debug.Log("payloads : " + payloads.Length.ToString());
             if (payloads.Length > 0)
             {
