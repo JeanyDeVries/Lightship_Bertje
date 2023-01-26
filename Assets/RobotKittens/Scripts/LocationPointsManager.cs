@@ -26,19 +26,20 @@ public class WayPointsManager : MonoBehaviour
     [SerializeField]
     float radius;
 
-    private enum wayPointsStatus
+    [HideInInspector] public enum wayPointsStatus
     {
         startScavengerHunt,
         scavengerHuntTime,
         finished
     }
+    [HideInInspector] public wayPointsStatus wayPointStatus;
+
 
     private GameObject targetLocationObject;
     private GameObject lastTargetLocationObject = null;
     private GameObject arrowObj;
     private float arrowRotationSpeed = 15;
     private List<LocationPoint> allWayPoints = new List<LocationPoint>();
-    private wayPointsStatus wayPointStatus;
 
     public void Start()
     {
@@ -105,9 +106,10 @@ public class WayPointsManager : MonoBehaviour
         }
     }
 
+    [ExecuteInEditMode]
     private void OnDrawGizmos()
     {
-        foreach (var child in allWayPoints)
+        foreach (var child in waypoints)
         {
             // Draw a blue sphere at the transform's position
             Gizmos.color = Color.blue;
@@ -117,6 +119,8 @@ public class WayPointsManager : MonoBehaviour
 
     private void AssignTargetLocation()
     {
+        Debug.Log("waypoints " + waypoints.Count);
+
         //Set a random target location
         int randomNumber = Random.Range(0, waypoints.Count);
         LocationPoint targetLocation = waypoints[randomNumber];

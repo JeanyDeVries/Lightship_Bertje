@@ -10,6 +10,9 @@ public class MovementController : MonoBehaviour
     [SerializeField]
     private float movementSpeed;
 
+    [SerializeField]
+    WayPointsManager wayPointsManager;
+
     private Rigidbody rigidbody;
     private JoystickManager joystickManager;
 
@@ -18,12 +21,17 @@ public class MovementController : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         joystickManager = GameObject.Find("ImgBGJoystick").GetComponent<JoystickManager>();
-
-        Debug.Log("start");
     }
 
     private void FixedUpdate()
     {
+        if (wayPointsManager.wayPointStatus == WayPointsManager.wayPointsStatus.finished)
+        {
+            //stop movement when game is finished
+            joystickManager.Reset();
+            return; 
+        }
+
         float inputX = joystickManager.InputHorizontal();
         float inputY = joystickManager.InputVertical();
 

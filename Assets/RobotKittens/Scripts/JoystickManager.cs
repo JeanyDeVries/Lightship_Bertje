@@ -48,6 +48,11 @@ public class JoystickManager : MonoBehaviour, IDragHandler, IPointerDownHandler,
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        Reset();
+    }
+
+    public void Reset()
+    {
         posInput = Vector2.zero;
         joystickImg.rectTransform.anchoredPosition = Vector2.zero;
     }

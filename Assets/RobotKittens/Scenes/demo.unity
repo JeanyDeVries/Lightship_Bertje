@@ -2193,7 +2193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905133787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.57, y: -0.203, z: 0.28}
+  m_LocalPosition: {x: -2.381, y: -0.607, z: 0.5920001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3096,12 +3096,14 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1998515094}
   - {fileID: 905133789}
+  - {fileID: 27203878}
   textTargetLocation: {fileID: 1525717685}
   UI_Finished: {fileID: 590122742}
   UI_Game: {fileID: 712689768}
   restartButton: {fileID: 1394778380}
   prefabArrow: {fileID: 2677498821332877671, guid: 1a6f92c9e821ffe4db27ee7a258d5cd1, type: 3}
-  radius: 0.8
+  radius: 0.7
+  wayPointStatus: 0
 --- !u!1 &1394778378
 GameObject:
   m_ObjectHideFlags: 0
@@ -4805,7 +4807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998515092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.249, y: -0.226, z: 1.828}
+  m_LocalPosition: {x: -0.06, y: -0.63, z: 2.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4980,6 +4982,10 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 24117615216795360, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
+      propertyPath: wayPointsManager
+      value: 
+      objectReference: {fileID: 1362770330}
     - target: {fileID: 24117615216795361, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_UseGravity
       value: 1
@@ -5010,7 +5016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.061
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalRotation.w
