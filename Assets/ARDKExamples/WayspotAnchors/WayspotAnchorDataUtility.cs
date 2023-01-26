@@ -67,30 +67,44 @@ namespace Niantic.ARDKExamples.WayspotAnchors
             PlayerPrefs.SetString(DataKey, wayspotAnchorsJson);
         }
 
-        public WayspotAnchorPayload[] LoadPayloads(MapData location)
+        public WayspotAnchorPayload[] LoadPayloads(List<MapData> locations)
         {
             WayspotAnchorService wayspotAnchorService = wayspotAnchorExampleManager.CreateWayspotAnchorService();
 
+            UI_Game.SetActive(true);
+            UI_ARStatus.SetActive(false);
+            locationManager.SetActive(true);
 
-            // for (int i = 1; i <= locations.Count; i++) //Skip 0 because Unity UI is fucked
-            // {
             var payloads = new List<WayspotAnchorPayload>();
-            payloads.Add(WayspotAnchorPayload.Deserialize(location.keyLocation));
+            var trackers = new List<WayspotAnchorTracker>();
+            for (int i = 1; i <= locations.Count; i++)
+            {
+                var location = locations[i];
+                payloads.Add(WayspotAnchorPayload.Deserialize(location.keyLocation));
 
-            Debug.Log("location : " + location.nameLocation);
+                Debug.Log("location : " + location.nameLocation);
 
-            GameObject roomObject = new GameObject();
-            WayspotAnchorTracker tracker = roomObject.AddComponent(typeof(WayspotAnchorTracker)) as WayspotAnchorTracker;
+                GameObject roomObject = new GameObject();
+                WayspotAnchorTracker tracker = roomObject.AddComponent(typeof(WayspotAnchorTracker)) as WayspotAnchorTracker;
+                trackers.Add(tracker);
 
-            MeshRenderer meshRenderer = roomObject.AddComponent(typeof(MeshRenderer)) as MeshRenderer;
-            MeshFilter meshFilter = roomObject.AddComponent(typeof(MeshFilter)) as MeshFilter;
-            meshFilter.mesh = location.meshLocation;
-            meshFilter.sharedMesh = location.meshLocation;
-            meshRenderer.material = meshTransparent;
-            MeshCollider meshCollider = roomObject.AddComponent<MeshCollider>();
-            //meshCollider.convex = true;
-            Debug.Log("Mesh" + meshFilter.sharedMesh.isReadable.ToString());
+                MeshRenderer meshRenderer = roomObject.AddComponent(typeof(MeshRenderer)) as MeshRenderer;
+                MeshFilter meshFilter = roomObject.AddComponent(typeof(MeshFilter)) as MeshFilter;
+                meshFilter.mesh = location.meshLocation;
+                meshFilter.sharedMesh = location.meshLocation;
+                meshRenderer.material = meshTransparent;
+                MeshCollider meshCollider = roomObject.AddComponent<MeshCollider>();
+                //meshCollider.convex = true;
+                Debug.Log("Mesh" + meshFilter.sharedMesh.isReadable.ToString());
 
+                //WayspotAnchorTracker placedTracker = null;
+                foreach (GameObject placedObjectData in location.placedObjects)
+                {
+                    GameObject placedObject = Instantiate(placedObjectData);
+                    placedObject.SetActive(true);
+                    placedObject.transform.SetParent(roomObject.transform);
+                }
+            }
 
             var payloadsArray = payloads.ToArray();
 
@@ -105,38 +119,16 @@ namespace Niantic.ARDKExamples.WayspotAnchors
                 }
             }
 
-            foreach (var meshLocation in location.surroundingMeshes)
+            foreach (var tracker in trackers)
             {
-                GameObject mesh = new GameObject();
-
-                MeshRenderer meshRenderer1 = mesh.AddComponent(typeof(MeshRenderer)) as MeshRenderer;
-                MeshFilter meshFilter1 = mesh.AddComponent(typeof(MeshFilter)) as MeshFilter;
-                meshFilter1.mesh = meshLocation;
-                meshFilter1.sharedMesh = meshLocation;
-                meshRenderer1.material = meshTransparent;
-                mesh.AddComponent<MeshCollider>();
-                mesh.transform.SetParent(roomObject.transform);
-            }
-
-            //WayspotAnchorTracker placedTracker = null;
-            foreach (GameObject placedObjectData in location.placedObjects)
-            {
-                GameObject placedObject = Instantiate(placedObjectData);
-                placedObject.SetActive(true);
-                placedObject.transform.SetParent(roomObject.transform);
-            }
-
-            UI_Game.SetActive(true);
-            UI_ARStatus.SetActive(false);
-            locationManager.SetActive(true);
-
-            if (anchorsList.Count > 0)
-            {
-                Debug.Log("Anchors");
-                foreach (var anchor in anchorsList)
+                if (anchorsList.Count > 0)
                 {
-                    Debug.Log("Anchor : " + anchor.ToString());
-                    tracker.AttachAnchor(anchor);
+                    Debug.Log("Anchors");
+                    foreach (var anchor in anchorsList)
+                    {
+                        Debug.Log("Anchor : " + anchor.ToString());
+                        tracker.AttachAnchor(anchor);
+                    }
                 }
             }
 

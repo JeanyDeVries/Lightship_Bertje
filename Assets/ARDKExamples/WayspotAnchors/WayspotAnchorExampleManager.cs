@@ -22,7 +22,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
     {
         [Tooltip("Skip the first one in the list (0), because UI is fucked in Unity")]
         [SerializeField]
-        public MapData streetLocation;
+        public List<MapData> streetLocation;
 
         [Tooltip("The anchor that will be placed")]
         [SerializeField]
@@ -204,7 +204,6 @@ namespace Niantic.ARDKExamples.WayspotAnchors
         {
             _arSession.Ran -= HandleSessionRan;
             WayspotAnchorService = CreateWayspotAnchorService();
-            WayspotAnchorService = CreateWayspotAnchorService();
             WayspotAnchorService.LocalizationStateUpdated += OnLocalizationStateUpdated;
             _statusLog.text = "Session running";
         }
@@ -354,7 +353,7 @@ namespace Niantic.ARDKExamples.WayspotAnchors
             public string nameLocation;
             public string keyLocation;
             public Mesh meshLocation;
-            public List<Mesh> surroundingMeshes;
+            //public List<Mesh> surroundingMeshes;
             public List<GameObject> placedObjects;
         }
 

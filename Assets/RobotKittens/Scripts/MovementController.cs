@@ -18,10 +18,15 @@ public class MovementController : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         joystickManager = GameObject.Find("ImgBGJoystick").GetComponent<JoystickManager>();
+
+        Debug.Log("start");
     }
 
     private void FixedUpdate()
     {
+        Debug.Log("joystick" + (joystickManager == null).ToString());
+        Debug.Log("joystickRB" + (rigidbody == null).ToString());
+
         float inputX = joystickManager.InputHorizontal();
         float inputY = joystickManager.InputVertical();
 

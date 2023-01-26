@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6039578408191505674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6039578408191505672}
+  - component: {fileID: 6039578408191505673}
+  - component: {fileID: 6039578408191505679}
+  - component: {fileID: 6039578408191505678}
+  m_Layer: 0
+  m_Name: WayspotAnchors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6039578408191505672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6039578408191505674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6039578408191505673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6039578408191505674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52451fd4749e945a0be9a6e3c50abb9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  streetLocation:
+  - nameLocation: 
+    keyLocation: 
+    meshLocation: {fileID: 0}
+    placedObjects: []
+  - nameLocation: Street2
+    keyLocation: ChQIuMWy8vOQw6Y2EKeJ5JHX7vTaNhir8sfXs+L8AiomChQI5ojput2/4qAREKzRw4mV9viHRhIJCgASBSUAAIA/HQAAgD8=
+    meshLocation: {fileID: -8670151273213183110, guid: 6ee9c1064e933a74cbb60474805063a1, type: 3}
+    placedObjects: []
+  - nameLocation: Street1
+    keyLocation: ChUIx6SE08bWhKQ5EKqHpqXguIi3zwEYg56rqLTi/AIqJwoVCPyOkeG1ue2jCBC4y6Hgre6Hz6UBEgkKABIFJQAAgD8dAACAPw==
+    meshLocation: {fileID: -8670151273213183110, guid: 99c86de751d9f5a4c8fdce9d17f089cd, type: 3}
+    placedObjects:
+    - {fileID: 0}
+    - {fileID: 0}
+  - nameLocation: Street3
+    keyLocation: ChUIhMqo/vO+7KYgEJbBu/LJgI+UrgEY4vrPtbTi/AIqKAoWCODNpLWfutSgyAEQuPvTrKvZyZeMARIJCgASBSUAAIA/HQAAgD8=
+    meshLocation: {fileID: -8670151273213183110, guid: 9ffece844552a1b4bbcf6a4c47704f1d, type: 3}
+    placedObjects: []
+  - nameLocation: Street4
+    keyLocation: ChUIjfabgu/NuqTjARCzg92K+szUpVoYrbyaqrPi/AIqJwoVCKSQm+acuauhOxC97cH00diD3KYBEgkKABIFJQAAgD8dAACAPw==
+    meshLocation: {fileID: -8670151273213183110, guid: fb358483c6466454886f11835ee299a3, type: 3}
+    placedObjects: []
+  _anchorPrefab: {fileID: 1321982507108314, guid: 6484d8fda33c04b9488646671e593855, type: 3}
+  _camera: {fileID: 0}
+  _statusLog: {fileID: 0}
+  _localizationStatus: {fileID: 0}
+--- !u!114 &6039578408191505679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6039578408191505674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5821591b591014c18875ea3277ca2221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wayspotAnchorExampleManager: {fileID: 6039578408191505673}
+  UI_Game: {fileID: 0}
+  UI_ARStatus: {fileID: 0}
+  locationManager: {fileID: 0}
+  meshTransparent: {fileID: 9084384364060258520, guid: beec56beffb041b4ab0c1be1cfacda42, type: 3}
+--- !u!114 &6039578408191505678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6039578408191505674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 618ac6cc688dac340a938607af4741f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
