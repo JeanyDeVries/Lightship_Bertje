@@ -24,9 +24,6 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("joystick" + (joystickManager == null).ToString());
-        Debug.Log("joystickRB" + (rigidbody == null).ToString());
-
         float inputX = joystickManager.InputHorizontal();
         float inputY = joystickManager.InputVertical();
 
@@ -44,12 +41,5 @@ public class MovementController : MonoBehaviour
 
         Vector3 cameraRelativeMovement = verticalMovement + horizontalMovement;
         this.transform.Translate(cameraRelativeMovement, Space.World);
-
-        //Store user input as a movement vector
-        //Vector3 inputMovement = new Vector3(inputX, 0, inputY);
-
-        //Apply the movement vector to the current position, which is
-        //multiplied by deltaTime and speed for a smooth MovePosition
-        //rigidbody.MovePosition(transform.position + inputMovement * Time.deltaTime * movementSpeed);
     }
 }
