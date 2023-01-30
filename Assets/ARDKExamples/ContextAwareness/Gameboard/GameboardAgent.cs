@@ -1,5 +1,6 @@
 // Copyright 2022 Niantic, Inc. All Rights Reserved.
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,6 +8,7 @@ using Niantic.ARDK.Extensions.Gameboard;
 using Niantic.ARDK.Utilities;
 
 using UnityEngine;
+using Random = System.Random;
 
 public class GameboardAgent: MonoBehaviour
 {
@@ -32,6 +34,7 @@ public class GameboardAgent: MonoBehaviour
     private AgentConfiguration _agentConfig;
 
     private IGameboard _gameboard;
+
 
     void Start()
     {
@@ -70,6 +73,7 @@ public class GameboardAgent: MonoBehaviour
                 SetDestination(_destination);
         }
     }
+
 
     void Update()
     {

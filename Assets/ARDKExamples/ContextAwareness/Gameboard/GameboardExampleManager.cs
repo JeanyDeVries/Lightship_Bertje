@@ -10,6 +10,7 @@ using Niantic.ARDK.Utilities.Input.Legacy;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static GameboardAgent;
 
 namespace Niantic.ARDKExamples
 {
@@ -27,6 +28,10 @@ namespace Niantic.ARDKExamples
         [SerializeField]
         [Tooltip("GameObject used to mark the agents set destination")]
         private GameObject _destinationMarker;
+
+        [SerializeField]
+        [Tooltip("The coin prefab")]
+        private GameObject _coinPrefab;
 
         [Header("UI")]
         [SerializeField]
@@ -49,6 +54,13 @@ namespace Niantic.ARDKExamples
         private bool _isReplacing;
         private bool _arIsRunning;
         private bool _gameboardIsRunning;
+        private bool _coinPlaced;
+
+        private List<Waypoint> _oldWaypoints = new List<Waypoint>();
+        private float coinSpawnChance = 0.5f;
+
+        private GameObject coin;
+        private CoinCollision coinCollision;
 
         /// Inform about started ARSession.
         public void ARSessionStarted()
@@ -87,6 +99,26 @@ namespace Niantic.ARDKExamples
             _gameboard = args.Gameboard;
             _gameboardIsRunning = true;
             _gameboard.GameboardDestroyed += OnGameboardDestroyed;
+            _gameboard.GameboardUpdated += OnGameboardUpdated;
+        }
+
+        private void OnGameboardUpdated(GameboardUpdatedArgs args)
+        {
+
+        }
+
+        private void PlaceCoin()
+        {
+            Debug.Log("coin placed");
+
+            Vector3 randomCoinPos;
+            _gameboard.FindRandomPosition(out randomCoinPos);
+
+            if(!coin)
+                coin = Instantiate(_coinPrefab);
+
+            coin.transform.position = new Vector3(randomCoinPos.x, randomCoinPos.y + 0.1f, randomCoinPos.z);
+            coinCollision = coin.GetComponent<CoinCollision>();
         }
 
         private void OnGameboardDestroyed(IArdkEventArgs args)
@@ -121,6 +153,20 @@ namespace Niantic.ARDKExamples
                 // Only allow placing the actor if at least one surface is discovered
                 _replaceButton.interactable = _gameboard.Area > 0;
                 HandleTouch();
+            }
+
+            if (!_coinPlaced && _agentGameObject) 
+            {
+                PlaceCoin();
+                _coinPlaced = true;
+            }
+            if(coinCollision!= null)
+            {
+                if (coinCollision.collision)
+                {
+                    PlaceCoin();
+                    coinCollision.collision = false;
+                }
             }
         }
 
@@ -207,7 +253,9 @@ namespace Niantic.ARDKExamples
                 _agentGameObject.SetActive(false);
             }
             else
+            {
                 _agent.State = GameboardAgent.AgentNavigationState.Idle;
+            }
         }
 
         private void CallButton_OnClick()

@@ -564,8 +564,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arCamera: {fileID: 2055860222}
-  _agentPrefab: {fileID: 906568254596490173, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
+  _agentPrefab: {fileID: 906568254596490173, guid: 3a3cf67ec761d5448b33b0f4526faef1, type: 3}
   _destinationMarker: {fileID: 2606613605707017764}
+  _coinPrefab: {fileID: 4026506577482160041, guid: e1a8aa9af39b0d5498ccdc1b38394dbe, type: 3}
   _replaceButton: {fileID: 1840727781}
   _replaceButtonText: {fileID: 550870977}
   _callButton: {fileID: 464986592}
@@ -669,7 +670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3667716828834607548, guid: dfb2a6adcae7042cab34590cd4290185, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3667716828834607549, guid: dfb2a6adcae7042cab34590cd4290185, type: 3}
       propertyPath: m_Name

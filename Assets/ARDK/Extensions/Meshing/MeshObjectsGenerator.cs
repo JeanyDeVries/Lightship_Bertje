@@ -188,7 +188,6 @@ namespace Niantic.ARDK.Extensions.Meshing
         return;
       }
 
-    Debug.Log("parent object : " + (_root != null).ToString());
       var go = GameObject.Instantiate(_prefab);
       go.transform.SetParent(_root.transform);
       go.transform.localScale = Vector3.one;
