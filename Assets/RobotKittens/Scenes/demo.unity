@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 27203877}
   - component: {fileID: 27203878}
   m_Layer: 0
-  m_Name: Kitchen
+  m_Name: POST_NL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27203876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.28, z: -1.84}
+  m_LocalPosition: {x: 23.02, y: -0.28, z: 13.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de53df20fd8e22242be3cf2111bea82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameLocation: Kitchen
+  nameLocation: POST_NL
   isTargetLocation: 0
 --- !u!1 &30639417
 GameObject:
@@ -2179,7 +2179,7 @@ GameObject:
   - component: {fileID: 905133788}
   - component: {fileID: 905133789}
   m_Layer: 0
-  m_Name: Bench
+  m_Name: Zilveren Kruis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2193,7 +2193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905133787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.02, y: -0.607, z: 0.5920001}
+  m_LocalPosition: {x: 3.28, y: -0.607, z: -8.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2212,7 +2212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de53df20fd8e22242be3cf2111bea82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameLocation: Bench
+  nameLocation: Zilveren Kruis
   isTargetLocation: 0
 --- !u!1 &943410580
 GameObject:
@@ -3102,7 +3102,7 @@ MonoBehaviour:
   UI_Game: {fileID: 712689768}
   restartButton: {fileID: 1394778380}
   prefabArrow: {fileID: 2677498821332877671, guid: 1a6f92c9e821ffe4db27ee7a258d5cd1, type: 3}
-  radius: 0.7
+  radius: 2
   wayPointStatus: 0
 --- !u!1 &1394778378
 GameObject:
@@ -4793,7 +4793,7 @@ GameObject:
   - component: {fileID: 1998515093}
   - component: {fileID: 1998515094}
   m_Layer: 0
-  m_Name: Door
+  m_Name: RK_FrontDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4806,14 +4806,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998515092}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28, y: -0.63, z: 2.14}
+  m_LocalRotation: {x: -0, y: -0.18615116, z: -0, w: 0.9825212}
+  m_LocalPosition: {x: -0.64, y: -0.63, z: 1.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1362770329}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -21.457, z: 0}
 --- !u!114 &1998515094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4826,7 +4826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de53df20fd8e22242be3cf2111bea82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameLocation: Door
+  nameLocation: Robot Kittens front door
   isTargetLocation: 0
 --- !u!1001 &2002467682
 PrefabInstance:
@@ -4996,43 +4996,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.33
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.896
+      value: -1.03
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.16
+      value: 3.668
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.99570894
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.092540294
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5040,7 +5040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 10.62
       objectReference: {fileID: 0}
     - target: {fileID: 567198099692255495, guid: b080c2651f972584b9900e2e08c82a61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5126,31 +5126,55 @@ PrefabInstance:
       objectReference: {fileID: 556913825}
     - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
       propertyPath: streetLocation.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
       propertyPath: streetLocation.Array.data[1].keyLocation
-      value: ChUIqIjdodqRwqL4ARCo6+PA4vq7iF0Y286O2PPk/AIqJwoVCK7k1+zZoOinrQEQhYvfjtaAgLJtEgkKABIFJQAAgD8dAACAPw==
+      value: ChUIx6SE08bWhKQ5EKqHpqXguIi3zwEYg56rqLTi/AIqJwoVCPyOkeG1ue2jCBC4y6Hgre6Hz6UBEgkKABIFJQAAgD8dAACAPw==
       objectReference: {fileID: 0}
     - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
       propertyPath: streetLocation.Array.data[2].keyLocation
-      value: ChUIvpS1zMTJ7KQ1EKmLqvnhz+6D9gEYpLzy1PPk/AIqJwoVCNzP0M2X5tSj7wEQv9ujxKObi7R4EgkKABIFJQAAgD8dAACAPw==
+      value: ChUIjfabgu/NuqTjARCzg92K+szUpVoYrbyaqrPi/AIqJwoVCKSQm+acuauhOxC97cH00diD3KYBEgkKABIFJQAAgD8dAACAPw==
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
+      propertyPath: streetLocation.Array.data[3].keyLocation
+      value: ChQIuMWy8vOQw6Y2EKeJ5JHX7vTaNhir8sfXs+L8AiomChQI5ojput2/4qAREKzRw4mV9viHRhIJCgASBSUAAIA/HQAAgD8=
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
+      propertyPath: streetLocation.Array.data[4].keyLocation
+      value: ChUIhMqo/vO+7KYgEJbBu/LJgI+UrgEY4vrPtbTi/AIqKAoWCODNpLWfutSgyAEQuPvTrKvZyZeMARIJCgASBSUAAIA/HQAAgD8=
       objectReference: {fileID: 0}
     - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
       propertyPath: streetLocation.Array.data[1].meshLocation
       value: 
-      objectReference: {fileID: -8670151273213183110, guid: abdd31c4f10d36b4d9555937ea417d72, type: 3}
+      objectReference: {fileID: -8670151273213183110, guid: 99c86de751d9f5a4c8fdce9d17f089cd, type: 3}
     - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
       propertyPath: streetLocation.Array.data[1].nameLocation
-      value: jeanyHome0
+      value: 7C47245CCBB54708B86508DC721F9EA5
       objectReference: {fileID: 0}
     - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
       propertyPath: streetLocation.Array.data[2].meshLocation
       value: 
-      objectReference: {fileID: -8670151273213183110, guid: 87056ef87530c734eb7659ab65637962, type: 3}
+      objectReference: {fileID: -8670151273213183110, guid: fb358483c6466454886f11835ee299a3, type: 3}
     - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
       propertyPath: streetLocation.Array.data[2].nameLocation
-      value: jeanyHome1
+      value: 24C8C6CCC9AD423BBD76901EC50EB8A6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
+      propertyPath: streetLocation.Array.data[3].meshLocation
+      value: 
+      objectReference: {fileID: -8670151273213183110, guid: 6ee9c1064e933a74cbb60474805063a1, type: 3}
+    - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
+      propertyPath: streetLocation.Array.data[3].nameLocation
+      value: 66445AD7FD894111ACE83051B1E30F46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
+      propertyPath: streetLocation.Array.data[4].meshLocation
+      value: 
+      objectReference: {fileID: -8670151273213183110, guid: 9ffece844552a1b4bbcf6a4c47704f1d, type: 3}
+    - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
+      propertyPath: streetLocation.Array.data[4].nameLocation
+      value: E026A9F6D15141C8B8FD94B5CA262F8C
       objectReference: {fileID: 0}
     - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
       propertyPath: streetLocation.Array.data[1].placedObjects.Array.size
@@ -5167,7 +5191,7 @@ PrefabInstance:
     - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
       propertyPath: streetLocation.Array.data[1].placedObjects.Array.data[1]
       value: 
-      objectReference: {fileID: 943410580}
+      objectReference: {fileID: 866972966}
     - target: {fileID: 6039578408191505673, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
       propertyPath: streetLocation.Array.data[2].placedObjects.Array.data[0]
       value: 
