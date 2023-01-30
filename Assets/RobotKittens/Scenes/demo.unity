@@ -5220,5 +5220,6 @@ PrefabInstance:
       propertyPath: meshTransparent
       value: 
       objectReference: {fileID: 2100000, guid: 5724a0659acb7004a8de54f16b117563, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6039578408191505678, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b763025d56dd1d340beed321cf74a0e0, type: 3}

@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/RobotKittens/Scenes/demo.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/RobotKittens/Scenes/GameboardBertje.unity
+    guid: 5fe2aea57e47283469311d0a6501e9d8
   m_configObjects: {}
