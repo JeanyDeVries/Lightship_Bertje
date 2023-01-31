@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collision: 0
-  rotationSpeed: 20
+  rotationSpeed: 30
 --- !u!114 &-994697310657436403
 MonoBehaviour:
   m_ObjectHideFlags: 0

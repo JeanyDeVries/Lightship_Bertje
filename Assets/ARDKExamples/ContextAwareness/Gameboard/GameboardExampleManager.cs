@@ -162,13 +162,6 @@ namespace Niantic.ARDKExamples
                 HandleTouch();
             }
 
-            if (!_coinPlaced && _agentGameObject) 
-            {
-                PlaceCoin();
-                _coinPlaced = true;
-                _coinsAmountText.gameObject.SetActive(true);
-                _timerText.gameObject.SetActive(true);
-            }
             if (_coinCollision!= null)
             {
                 if (_coinCollision.collision)
@@ -280,6 +273,12 @@ namespace Niantic.ARDKExamples
             else
             {
                 _agent.State = GameboardAgent.AgentNavigationState.Idle;
+
+                //place a coin + add the corresponding ui with it
+                PlaceCoin();
+                _coinPlaced = true;
+                _coinsAmountText.gameObject.SetActive(true);
+                _timerText.gameObject.SetActive(true);
             }
         }
 
