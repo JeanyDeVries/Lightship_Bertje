@@ -170,6 +170,7 @@ namespace Niantic.ARDKExamples
                     _coinsAmountText.text = "Coins : " + _coinsAmount.ToString();
 
                     PlaceCoin();
+                    _countDownCoin.Reset();
                     _coinCollision.collision = false;
                 }
             }
