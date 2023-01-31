@@ -1,22 +1,19 @@
 // Copyright 2022 Niantic, Inc. All Rights Reserved.
 
-using System.Collections;
+using System;
 using System.Collections.Generic;
 
 using Niantic.ARDK.Extensions.Gameboard;
 using Niantic.ARDK.Utilities;
 using Niantic.ARDK.Utilities.Input.Legacy;
-
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static GameboardAgent;
 
 namespace Niantic.ARDKExamples
 {
     public class GameboardExampleManager: MonoBehaviour
     {
-#pragma warning disable 0649
         [SerializeField]
         [Tooltip("The scenes ARCamera")]
         private Camera _arCamera;
@@ -46,7 +43,13 @@ namespace Niantic.ARDKExamples
         [Tooltip("Button to call the agent")]
         private Button _callButton;
 
-#pragma warning restore 0649
+        [SerializeField]
+        [Tooltip("Text for the coins statistic")]
+        private Text _coinsAmountText;
+
+        [SerializeField]
+        [Tooltip("Text for the timer")]
+        private Text _timerText;
 
         private IGameboard _gameboard;
         private GameObject _agentGameObject;
@@ -57,10 +60,11 @@ namespace Niantic.ARDKExamples
         private bool _coinPlaced;
 
         private List<Waypoint> _oldWaypoints = new List<Waypoint>();
-        private float coinSpawnChance = 0.5f;
 
-        private GameObject coin;
-        private CoinCollision coinCollision;
+        private GameObject _coin;
+        private CoinManager _coinCollision;
+        private CountDownCoin _countDownCoin;
+        private int _coinsAmount = 0;
 
         /// Inform about started ARSession.
         public void ARSessionStarted()
@@ -89,6 +93,9 @@ namespace Niantic.ARDKExamples
         {
             GameboardFactory.GameboardInitialized += OnGameboardCreated;
 
+            _coinsAmountText.text = "";
+            _coinsAmountText.gameObject.SetActive(false);
+            _timerText.gameObject.SetActive(false);
             _callButton.interactable = false;
             _replaceButton.interactable = false;
             _replaceButtonText.text = "Place";
@@ -109,16 +116,16 @@ namespace Niantic.ARDKExamples
 
         private void PlaceCoin()
         {
-            Debug.Log("coin placed");
-
             Vector3 randomCoinPos;
             _gameboard.FindRandomPosition(out randomCoinPos);
 
-            if(!coin)
-                coin = Instantiate(_coinPrefab);
+            if(!_coin)
+                _coin = Instantiate(_coinPrefab);
 
-            coin.transform.position = new Vector3(randomCoinPos.x, randomCoinPos.y + 0.1f, randomCoinPos.z);
-            coinCollision = coin.GetComponent<CoinCollision>();
+            _coin.transform.position = new Vector3(randomCoinPos.x, randomCoinPos.y + 0.3f, randomCoinPos.z);
+            _coin.transform.rotation = new Quaternion(-90f, 0f, 0f, 0f);
+            _coinCollision = _coin.GetComponent<CoinManager>();
+            _countDownCoin = _coin.GetComponent<CountDownCoin>();
         }
 
         private void OnGameboardDestroyed(IArdkEventArgs args)
@@ -159,14 +166,32 @@ namespace Niantic.ARDKExamples
             {
                 PlaceCoin();
                 _coinPlaced = true;
+                _coinsAmountText.gameObject.SetActive(true);
+                _timerText.gameObject.SetActive(true);
             }
-            if(coinCollision!= null)
+            if (_coinCollision!= null)
             {
-                if (coinCollision.collision)
+                if (_coinCollision.collision)
+                {
+                    _coinsAmount++;
+                    _coinsAmountText.text = "Coins : " + _coinsAmount.ToString();
+
+                    PlaceCoin();
+                    _coinCollision.collision = false;
+                }
+            }
+
+            if (_countDownCoin)
+            {
+                if(_countDownCoin.timeRemaining <= 0) //reset the coin when the timer is finished
                 {
                     PlaceCoin();
-                    coinCollision.collision = false;
+                    _countDownCoin.Reset();
+                    return;
                 }
+
+                double roundedTime = Math.Round(_countDownCoin.timeRemaining, 0);
+                _timerText.text = "time : " + roundedTime;
             }
         }
 
