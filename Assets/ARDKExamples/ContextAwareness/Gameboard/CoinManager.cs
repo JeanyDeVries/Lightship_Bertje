@@ -11,10 +11,16 @@ public class CoinManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collision");
         if(other.gameObject.tag == "Bertje")
         {
-            Debug.Log("collision bertje");
+            collision = true;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Bertje")
+        {
             collision = true;
         }
     }
